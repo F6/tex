@@ -1,0 +1,87 @@
+%     % use this settings to get rid of all the margins.
+%     % the paper size is set to a5, everything else is
+%     % basically unchanged.
+%     % (identicle to cut out blank spaces around the 
+%     % text after printing with original a4 paper)
+%     \usepackage[a5paper,
+%                   hmargin=1.0cm, %horizontal margin = 1 cm on each side
+%                   vmargin=2.0cm, %vertical margin = 1 cm top and bottom
+% %                tmargin=1.2cm, %top margin = 1.2 cm
+% %                bmargin=0.8cm, %bottom margin = 0.8 cm 
+% 				  ]{geometry}
+
+\usepackage[slantfont,boldfont]{xeCJK}
+% \usepackage{fontspec}
+% \setCJKmainfont{SimSun}
+% \setmainfont{SimSun}
+% \setsansfont{SimSun}
+
+% all sorts of symbols and maths and units and physics
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+
+
+% mathematical proofs
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{algorithm}{Algorithm}
+
+
+\usepackage{parskip}
+% \setlength{\parindent}{0cm}
+
+% To insert HTTP hyperlinks and also mailto: hyperlinks
+\usepackage{hyperref}
+
+% We use this package to insert code pieces to the document. This is better than verbatim env because it preserves all indentations and it can also give line numbers
+\usepackage{listings}
+% The default font looks strange. We will just use the same font as \texttt
+\lstset{
+	basicstyle=\ttfamily,
+	columns=fullflexible,
+}
+
+% \( \mathds R \) to denote Real domain
+\usepackage{dsfont}
+
+% In order to insert framed paragraphs (mainly for comments and notes)
+\usepackage{framed}
+
+% we want to get some simple appendices
+\usepackage[toc,page]{appendix}
+
+% Use BibTeX to manage citations
+\usepackage[super,square]{natbib}
+
+% we also need some colored text
+\usepackage{xcolor}
+
+% for a hint on progress, use the \todo command
+% the benefit of this is that when compiling, we can 
+% get notified if there's still work to do
+\newcommand{\todo}[1]{
+	{\color{red}{\textbf{[TODO]}: #1 \textbf{[/TODO]}}}
+	\PackageWarning{TODO}{Text marked as todo}
+}
+
+% in Chinese documents, a new paragraph is indicated by indenting width of 2 
+% Chinese chars at the beginning. This can be done with 
+%  \setlength{\parindent}{21pt}  when we use a 10.5 pt font. 
+% However, the parindent indents every new paragraph, which is obviously not 
+% favorable for us because when we insert an equation, we typically do not want 
+% to start a new paragraph, so the next lines should not be indented.
+% I think the most robust way to indent the paragraphs for now is to use a 
+% simple command at the begining of every new paragraph.
+% we create a new command here because if we want to change the indentation 
+% length later, we can always just modify this command.
+% cpindent = Chinese paragraph indent
+\newcommand{\cpindent}[0]{\qquad}
+
+% use \includegraphics to insert pictures
+\usepackage{graphicx}
+
+% after \author, add \affil to indicate the affiliation
+\usepackage{authblk}

@@ -1,0 +1,135 @@
+%!TEX TS-program = xelatex
+
+%!TEX encoding = UTF-8 Unicode
+
+%!TEX program=xelatex
+\documentclass{article}
+
+\input{header.tex}
+
+\title{Example Title}
+\author{Zhi Zi}
+\date{\today}
+    
+\begin{document}
+\maketitle
+
+This is some preface before table of content
+
+\tableofcontents
+
+something before first section
+
+\section{Example section}
+
+example text1
+
+\subsection{Example subsection}
+
+example text2
+
+\subsubsection{Example subsubsection}
+
+example text3
+
+\paragraph{Example paragraph}
+
+example text4
+
+\subparagraph{Example subparagraph}
+
+example text5
+
+\section{Math}
+
+This is numbered equation
+
+\begin{equation}
+	E = m c^2
+\end{equation}
+
+This is inline math: \( E = mc^2 \)
+
+This is unnumbered equation
+
+\begin{equation*}
+	E = mc^2
+\end{equation*}
+
+This is aligned math
+
+\begin{equation}
+	\begin{aligned}
+		E    & = mc^2 \\
+		mc^2 & = E    \\
+	\end{aligned}
+\end{equation}
+
+\section{Source code}
+
+we can use verbatim for short source code
+
+\begin{verbatim}
+    very short source code
+\end{verbatim}
+
+Note tha verbatim ignores tab but does not ignore spaces, but a lot of formatters automatically use tab with latex, so it will mess up with our indentations.
+So we never use verbatim for longer pieces of code.
+
+Instead, we use listings package
+
+\lstinputlisting[label={src:example.cpp}, caption={Example source code (C++)},breaklines=true, frame=single, numbers=left, language=C++]{src/example.cpp}
+
+This way the source code is nicely formatted, and also numbered.
+Spaces, indentations, page breaks and breaklines are handled correctly.
+
+We can also refer to the source codes \ref{src:example.cpp} through the ref command.
+
+\section{Figures}
+
+Generally I scale all figures to the width of the column, and if i want anything smaller than that, i add blank spaces around the figure instead of changing the layout of the document.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.75\columnwidth]{figs/example.png}
+	\end{center}
+	\caption{Example Figure}
+	\label{fig:example.png}
+\end{figure}
+
+refer to Fig. \ref{fig:example.png} with ref command, too
+
+\section{Other commonly used structures}
+
+\subsection{Enumerate}
+
+\begin{enumerate}
+	\item 12123
+	\item 23234
+	\item 34345
+\end{enumerate}
+
+\subsection{Todo}
+
+\todo{I have also defined the todo macro. The macro marks texts with red color, and throws a warning when compiled}
+
+
+Before the references section, this is a example reference\cite{craig2004quantum}
+
+\bibliography{references}
+
+\bibliographystyle{plain}
+
+
+\newpage
+
+\begin{appendices}
+
+\section{Example Appendix}
+
+just some example text
+
+\end{appendices}
+
+
+\end{document}
