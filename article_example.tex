@@ -10,7 +10,7 @@
 \title{Example Title}
 \author{Zhi Zi}
 \date{\today}
-    
+
 \begin{document}
 \maketitle
 
@@ -117,6 +117,22 @@ refer to Fig. \ref{fig:example.png} with ref command, too
 
 \todo{I have also defined the todo macro. The macro marks texts with red color, and throws a warning when compiled}
 
+\subsection{Tables}
+
+The tex style tables are constructed via the tabular enviroment. 
+
+\begin{tabular}{l r r r r} \label{table:s-trans-1,3-butadiene}
+	      & HOMO-1  & HOMO     & LUMO     & LUMO+1   \\
+	\hline
+	C1 pZ & 0.37132 & -0.52083 & 0.62832  & -0.51243 \\
+	C2 pZ & 0.47501 & -0.40397 & -0.47521 & 0.69857  \\
+	C3 pZ & 0.47500 & 0.40397  & -0.47521 & -0.69857 \\
+	C4 pZ & 0.37132 & 0.52084  & 0.62832  & 0.51243  \\
+\end{tabular}
+
+However, it is very tedious to construct the table by hand, so we can also use the package csvsimple to import data from csv files
+
+\csvautobooklongtable{data/butadiene.csv}
 
 Before the references section, this is a example reference\cite{craig2004quantum}
 
@@ -129,9 +145,9 @@ Before the references section, this is a example reference\cite{craig2004quantum
 
 \begin{appendices}
 
-\section{Example Appendix}
+	\section{Example Appendix}
 
-just some example text
+	just some example text
 
 \end{appendices}
 
