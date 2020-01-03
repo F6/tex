@@ -1,0 +1,7 @@
+xelatex article_example.tex
+xelatex article_example.tex
+bibtex article_example
+xelatex article_example.tex
+xelatex article_example.tex
+makeglossaries article_example
+xelatex article_example.tex

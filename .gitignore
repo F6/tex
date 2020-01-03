@@ -1,3 +1,4 @@
+# generic tex
 *.aux
 *.bbl
 *.blg
@@ -6,3 +7,7 @@
 *.pdf
 *.synctex.gz
 *.toc
+# xindy
+*.xdy
+# glossary
+*.glo

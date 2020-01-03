@@ -20,6 +20,10 @@ Test latin, \textbf{Bold}, \textit{italic}.
 
 测试中文，\textbf{粗体}，\textit{斜体}。
 
+\gls{PIMD}
+
+\Gls{PIMD} again
+
 \tableofcontents
 
 something before first section
@@ -49,15 +53,15 @@ example text5
 This is numbered equation
 
 \begin{equation}
-	E = m c^2
+	\hat H \ket{\psi} = E \ket{\psi}
 \end{equation}
 
-This is inline math: \( E = mc^2 \)
+This is inline math: \( \hat H \ket{\psi} = E \ket{\psi} \)
 
 This is unnumbered equation
 
 \begin{equation*}
-	E = mc^2
+	\hat H \ket{\psi} = E \ket{\psi}
 \end{equation*}
 
 This is aligned math
@@ -65,7 +69,7 @@ This is aligned math
 \begin{equation}
 	\begin{aligned}
 		E    & = mc^2 \\
-		mc^2 & = E    \\
+		\hat H \ket{\psi(t)} &= i\hbar \frac{d}{dt} \ket{\psi(t)}    \\
 	\end{aligned}
 \end{equation}
 
@@ -91,7 +95,7 @@ We can also refer to the source codes \ref{src:example.cpp} through the ref comm
 
 \section{Figures}
 
-Generally I scale all figures to the width of the column, and if i want anything smaller than that, i add blank spaces around the figure instead of changing the layout of the document.
+Generally I scale all figures to 0.75 times the width of the column.
 
 \begin{figure}
 	\begin{center}
@@ -121,7 +125,7 @@ refer to Fig. \ref{fig:example.png} with ref command, too
 
 The tex style tables are constructed via the tabular enviroment. 
 
-\begin{tabular}{l r r r r} \label{table:s-trans-1,3-butadiene}
+\begin{tabular}{l r r r r}
 	      & HOMO-1  & HOMO     & LUMO     & LUMO+1   \\
 	\hline
 	C1 pZ & 0.37132 & -0.52083 & 0.62832  & -0.51243 \\
@@ -130,7 +134,7 @@ The tex style tables are constructed via the tabular enviroment.
 	C4 pZ & 0.37132 & 0.52084  & 0.62832  & 0.51243  \\
 \end{tabular}
 
-However, it is very tedious to construct the table by hand, so we can also use the package csvsimple to import data from csv files
+The tabular env will handle decimal points and minus signs correctly, but it is very tedious to construct the table by hand, so we can also use the package csvsimple to import data from csv files
 
 \csvautobooklongtable{data/butadiene.csv}
 
@@ -151,5 +155,8 @@ Before the references section, this is a example reference\cite{craig2004quantum
 
 \end{appendices}
 
+\newpage
+
+\printglossaries
 
 \end{document}
